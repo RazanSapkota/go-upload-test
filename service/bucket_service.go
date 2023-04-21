@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"errors"
 	"example/go-api/lib"
 	"io"
 	"log"
@@ -65,5 +66,6 @@ func (s *BucketService) UploadFile(ctx context.Context, file io.Reader, fileName
 	path = strings.Replace(path, "/"+bucketName, "", 1)
 	path = strings.Replace(path, "/", "", 1)
 
-	return path, nil
+	//return path, nil
+	return "", errors.New("testing errorfor -" + path)
 }
